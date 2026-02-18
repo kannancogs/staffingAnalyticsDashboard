@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -9,28 +9,52 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
 
-    - name: Install & Build
-      run: |
-        npm ci
-        npm run build
+      - name: Install
+        run: npm ci
+        env:
+          CI: true
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./build   # change to ./build if using CRA
+      - name: Build
+        # 👇 Use the script that matches your project:
+        # For custom webpack build → produces `dist/`
+        # run: npm run build
+        # For CRA (`react-scripts build`) → produces `build/`
+        run: npm run build
+        env:
+          CI: true
+
+      - name: Verify output exists
+        run: |
+          echo "Listing repo root:"
+          ls -la
+          echo "Listing dist and build if they exist:"
+          ls -la dist || true
+          ls -la build || true
+          # Fail if neither dist nor build exists
+          test -d dist -o -d build
+
+      - name: Upload artifact (dist preferred)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # If your output is `dist`, keep dist; if it is `build`, change to ./build
+          path: ./dist
 
   deploy:
     needs: build
@@ -38,8 +62,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-    - name: Deploy
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.b82a96fd.css",
-    "main.js": "/static/js/main.719e4dc7.js",
+    "main.css": "/static/css/main.96b8afda.css",
+    "main.js": "/static/js/main.63b7cb44.js",
     "static/media/cts-logo.png": "/static/media/cts-logo.e87de59e106d4e77d860.png",
     "index.html": "/index.html",
-    "main.b82a96fd.css.map": "/static/css/main.b82a96fd.css.map",
-    "main.719e4dc7.js.map": "/static/js/main.719e4dc7.js.map"
+    "main.96b8afda.css.map": "/static/css/main.96b8afda.css.map",
+    "main.63b7cb44.js.map": "/static/js/main.63b7cb44.js.map"
   },
   "entrypoints": [
-    "static/css/main.b82a96fd.css",
-    "static/js/main.719e4dc7.js"
+    "static/css/main.96b8afda.css",
+    "static/js/main.63b7cb44.js"
   ]
 }

@@ -1,0 +1,977 @@
+/* Cognizant Adobe staffing analytics Dashboard Styling */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8FBFF;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Header Styling */
+.header {
+  background: linear-gradient(90deg, #00bacc 0%, #004499 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  font-size: 1.1rem;
+  color: #E6F2FF;
+  opacity: 0.9;
+}
+
+/* Container and Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Tab Navigation */
+.tabs {
+  display: flex;
+  background: #F5F7FA;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+  min-height: 60px;
+}
+
+.tab-button {
+  flex: 1;
+  min-width: 120px;
+  padding: 1rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.tab-button:hover {
+  background: rgba(0, 102, 204, 0.1);
+  color: #0066CC;
+}
+
+.tab-button.active {
+  /* background: linear-gradient(90deg, #0066CC 0%, #004499 100%);*/
+   background: linear-gradient(90deg, #00bacc 0%, #004499 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+}
+
+/* Card Styling */
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E0E7FF;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  color: #0066CC;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* File Upload Styling */
+.file-upload {
+  border: 2px dashed #0066CC;
+  background: #F8FBFF;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.file-upload:hover {
+  background: #F0F7FF;
+  border-color: #004499;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload-text {
+  font-size: 1.1rem;
+  color: #0066CC;
+  font-weight: 500;
+}
+
+.file-upload-hint {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Button Styling */
+.button {
+  background: linear-gradient(90deg, #0066CC 0%, #004499 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #004499 0%, #0066CC 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 102, 204, 0.3);
+}
+
+.button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.button-secondary {
+  background: transparent;
+  color: #0066CC;
+  border: 2px solid #0066CC;
+}
+
+.button-secondary:hover {
+  background: #0066CC;
+  color: white;
+}
+
+/* Input and Form Controls */
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E0E7FF;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0066CC;
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E0E7FF;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+/* Table Styling */
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #E0E7FF;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #E0E7FF;
+}
+
+.table th {
+  background: #F8FBFF;
+  font-weight: 600;
+  color: #0066CC;
+  border-bottom: 2px solid #E0E7FF;
+}
+
+.table tbody tr:hover {
+  background: #F8FBFF;
+}
+
+/* KPI Metrics */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  /* margin-bottom: 2rem; */
+}
+
+.metric-card {
+  background: linear-gradient(135deg, #F8FBFF 0%, #E6F2FF 100%);
+  border: 1px solid #E0E7FF;
+  border-radius: 8px;
+  padding: .2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 110px;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0066CC;
+  margin-bottom: 0.5rem;
+
+}
+
+.metric-label {
+  color: #666;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Chart Container */
+.chart-container {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #E0E7FF;
+  margin-bottom: 1.5rem;
+}
+
+.chart-title {
+  color: #0066CC;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.metricNewjoinRes{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Search and Filter Controls */
+.search-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: end;
+}
+
+.search-input {
+  flex: 2;
+  min-width: 200px;
+}
+
+.filter-select {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Status Messages */
+.message {
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.message-success {
+  background: linear-gradient(90deg, #D4EDDA 0%, #C3E6CB 100%);
+  color: #155724;
+  border: 1px solid #28A745;
+}
+
+.message-error {
+  background: linear-gradient(90deg, #F8D7DA 0%, #F5C6CB 100%);
+  color: #721c24;
+  border: 1px solid #DC3545;
+}
+
+.message-warning {
+  background: linear-gradient(90deg, #FFF3CD 0%, #FFEAA7 100%);
+  color: #856404;
+  border: 1px solid #FFC107;
+}
+
+.message-info {
+  background: linear-gradient(90deg, #D1ECF1 0%, #B8E2E8 100%);
+  color: #0c5460;
+  border: 1px solid #17A2B8;
+}
+
+/* Loading State */
+.loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #E0E7FF;
+  border-radius: 50%;
+  border-top-color: #0066CC;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* .btn {
+    background: linear-gradient(90deg, #0066CC 0%, #0067e8 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+    padding: 8px;
+    border-radius: 7px;
+    flex: 1 1;
+    min-width: 120px;
+    padding: 1rem 1.5rem;
+    border: none;
+
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+} */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 1.5rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab-button {
+    min-width: 140px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  
+  .search-filters {
+    flex-direction: column;
+  }
+  
+  .search-input,
+  .filter-select {
+    flex: none;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+.table-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.table-scroll-x {
+  overflow-x: auto;
+  overflow-y: visible;
+  width: 100%;
+}
+
+.table-el {
+  width: 100%;
+  min-width: 1000px; /* tune for your columns */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+/* Example CSS (put in a global stylesheet or module and import) */
+.tooltip-wrap {
+  position: relative;
+  display: inline-block; /* so the bubble positions relative to cell content */
+}
+
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-bubble {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transform: translateY(-6px);
+  background: #111827; /* slate-900 */
+  color: #fff;
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 1.3;
+  border-radius: 4px;
+  white-space: normal;  /* allow wrapping */
+  max-width: 360px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 20ms ease, transform 20ms ease;
+  z-index: 20;
+  visibility: hidden;
+}
+.tooltip-wrap:hover .tooltip-bubble,
+.tooltip-wrap:focus-within .tooltip-bubble {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-8px);
+}
+.tooltip-bubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  border: 6px solid transparent;
+  border-top-color: #111827;
+}
+
+.tooltip-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-fast {
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  transform: translateY(-6px);
+  background: #111827;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: normal;
+  max-width: 260px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 80ms ease, transform 80ms ease;
+  z-index: 999;
+}
+
+.tooltip-wrap:hover .tooltip-fast {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-8px);
+}
+.editBtn,.saveBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  background-color: #0066CC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.editBtn::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: rgb(102, 102, 141);
+  position: absolute;
+  z-index: 1;
+  transform: scale(0);
+  transition: all 0.3s;
+  border-radius: 50%;
+  filter: blur(10px);
+}
+.editBtn:hover::before {
+  transform: scale(.5);
+}
+.editBtn:hover {
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.336);
+    background-color: rgb(102, 102, 141);
+}
+
+.editBtn svg {
+  height: 15px;
+  fill: white;
+  z-index: 3;
+  transition: all 0.2s;
+  transform-origin: bottom;
+}
+.editBtn:hover svg {
+  transform: rotate(-10deg) translateX(1px);
+}
+.editBtn::after {
+  content: "";
+  width: 25px;
+  height: 1.5px;
+  position: absolute;
+  bottom: 19px;
+  left: -5px;
+  background-color: white;
+  border-radius: 2px;
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-out;
+}
+/* .editBtn:hover::after {
+  transform: scaleX(1);
+  left: 0px;
+  transform-origin: right;
+} */
+
+/* From Uiverse.io by vinodjangid07 */ 
+#checkboxInput {
+  display: none;
+}
+.bookmark {
+  cursor: pointer;
+  background-color: teal;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.svgIcon path {
+  stroke-dasharray: 200 0;
+  stroke-dashoffset: 0;
+  stroke: white;
+  fill: #dddddd00;
+  transition-delay: 0s;
+  transition-duration: 0.5s;
+}
+
+#checkboxInput:checked ~ .svgIcon path {
+  fill: white;
+  animation: bookmark 0.5s linear;
+  transition-delay: 0.5s;
+}
+
+@keyframes bookmark {
+  0% {
+    stroke-dasharray: 0 200;
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dasharray: 200 0;
+  }
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+.p-1 { padding: 1rem; }
+.p-2 { padding: 2rem; }
+
+
+/* --- Layout helper (optional) --- */
+.actionBar {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* --- SAVE button --- */
+.saveBtn {
+  /* Use currentColor so you can style with color property */
+  color: #111827; /* default icon stroke (gray-900) */
+  border: none;
+  background: transparent;
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  transition: color .2s ease, background-color .2s ease, transform .15s ease;
+  outline: none;
+  background: #009688;
+}
+
+.saveBtn:hover,
+.saveBtn:focus-visible {
+  color: #2563eb;             /* blue on hover */
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.saveBtn:active {
+  transform: translateY(0);
+}
+
+.saveBtn .svgIcon {
+  display: block;
+}
+
+/* --- CANCEL button (SVG X-in-circle) --- */
+.cancelBtn {
+  --size-svg: 30px;      /* icon size */
+  --ring: #da2323;       /* ring color */
+  --ring-hover: #da2323; /* ring color on hover */
+  --x: #000000;          /* initial X color (visible initially) */
+  --x-hover: #2563eb;    /* hover X color (overridden by themes below) */
+
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  outline: none;
+  transition: transform .15s ease, background-color .2s ease;
+}
+
+.cancelBtn:hover,
+.cancelBtn:focus-visible {
+  transform: translateY(-1px);
+  background-color: rgba(0,0,0,0.04);
+}
+
+.cancelBtn:active {
+  transform: translateY(0);
+}
+
+.cancelBtn .svgIcon {
+  width: var(--size-svg);
+  height: var(--size-svg);
+  display: block;
+}
+
+/* SVG parts */
+.cancelBtn .ring {
+  fill: none;
+  stroke: var(--ring);
+  stroke-width: 2.5;
+  transition: stroke .2s ease, transform .2s ease;
+  transform-origin: 24px 24px;
+}
+
+.cancelBtn .x {
+  stroke: var(--x);         /* visible initially */
+  stroke-linecap: round;
+  stroke-width: 3.5;
+  fill: none;
+  transition: stroke .25s ease;
+}
+
+/* Hover/focus interactions */
+.cancelBtn:hover .ring,
+.cancelBtn:focus-visible .ring {
+  stroke: var(--ring-hover);
+  transform: scale(1.04);
+}
+
+.cancelBtn:hover .x,
+.cancelBtn:focus-visible .x {
+  stroke: var(--x-hover);
+}
+
+/* Focus ring */
+.cancelBtn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,0,0,.08);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .saveBtn,
+  .cancelBtn .ring,
+  .cancelBtn .x {
+    transition: none;
+  }
+}
+
+/* ---------- Color Themes for CANCEL (non-red options) ---------- */
+.cancelBtn.color-blue   { --ring:#d7e4ff; --ring-hover:#c6d9ff; --x:#1e3a8a; --x-hover:#2563eb; }
+.cancelBtn.color-teal   { --ring:#cfeeee; --ring-hover:#bee7e7; --x:#0f766e; --x-hover:#14b8a6; }
+.cancelBtn.color-purple { --ring:#eadcff; --ring-hover:#e0cdff; --x:#5b21b6; --x-hover:#7c3aed; }
+.cancelBtn.color-orange { --ring:#ffe6d1; --ring-hover:#ffdbbd; --x:#da2323; --x-hover:#f97316; }
+.cancelBtn.color-gray   { --ring:#e7e7e7; --ring-hover:#dddddd; --x:#374151; --x-hover:#111827; }
+
+/* Optional: classic red theme if you ever want it */
+.cancelBtn.color-red    { --ring:#ffd6d6; --ring-hover:#ffb3b3; --x:#da2323; --x-hover:#e03131; }
+
+.buttonDwnld {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #1163ff;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+  cursor: pointer;
+    background: linear-gradient(90deg, #00bacc 0%, #004499 100%);
+}
+
+.buttonDwnld::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+  background: linear-gradient(90deg, #004499 0%, #00bacc 100%); 
+}
+
+/* .buttonDwnld::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+} */
+
+.buttonDwnld::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+.buttonDwnld::after, .buttonDwnld::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+.buttonDwnld:hover {
+  /* background: #6c18ff; */
+  background: linear-gradient(90deg,#004499, 0%, #00bacc 100%);
+}
+
+.buttonDwnld:hover .text {
+  top: -100%;
+}
+
+.buttonDwnld:hover .icon {
+  top: 0;
+}
+
+.buttonDwnld:hover:before,.buttonDwnld:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.buttonDwnld:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.buttonDwnld:hover:before {
+  bottom: 40px;
+}
+
+
+.dismiss {
+  position: relative;
+  right: 0px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: black;
+  border: 2px solid #D1D5DB;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.dismiss:hover {
+  background-color: #ee0d0d;
+  border: 2px solid #ee0d0d;
+  color: #fff;
+}
+
+.logoPng{
+  width: 100px;
+}
+
+.logoPng img{
+    width: 3%;
+    height: auto;
+}
+
+/* Example KPI card styles */
+.metric-card {
+  border: 1px solid var(--border, #e6e6e6);
+  border-radius: 10px;
+  padding: 5px 14px;
+  background: #fff;
+  transition: box-shadow 160ms ease, transform 100ms ease, border-color 160ms ease;
+   
+}
+
+.metric-card:hover,
+.metric-card:focus-visible {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.metric-card.active {
+  border-color: none;              /* primary border */
+  box-shadow: 0 0 0 3px rgba(13,110,253,0.15); /* focus ring-like glow */
+  background: linear-gradient(90deg, #00bacc 0%, #004499 100%);
+}
+
+.metric-card.active .metric-value,.metric-card.active .metric-label{
+  color:#fff
+}
+
+.btn.btn-sm.active {
+  background: linear-gradient(90deg, #00bacc 0%, #004499 100%);
+  color: #fff;
+    border-color: #0b5ed7;
+    padding: 7px 12px 7px 7px;
+    border-radius: 10px;
+}
+
+.metricNewjoinRes .btn-sm{ 
+    background:transparent;
+    padding: 1px;
+    border: none;
+      border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s;
+     padding: 7px 12px 7px 7px;
+}
